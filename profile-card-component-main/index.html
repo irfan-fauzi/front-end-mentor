@@ -7,6 +7,9 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Profile card component</title>
 
@@ -20,28 +23,187 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    h1,
+    p {
+      color: hsl(229, 23%, 23%);
+      font-size: 16px;
+    }
+
+
+    span {
+      font-weight: 100;
+    }
+
+    img {
+      width: 75px;
+      display: block;
+      margin-top: 45px;
+      border-radius: 50%;
+      border: #ffff solid 0.4em;
+      z-index: 3;
+    }
+
+    html {
+      padding: 0;
+      margin: 0;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    body {
+      background-color: hsl(185, 75%, 39%);
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+
+    .card {
+      width: 300px;
+      margin: auto;
+      position: relative;
+      text-align: center;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 10px 10px 246px -78px rgba(0, 0, 0, 0.75);
+
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background-size: cover;
+      background: url("images/bg-pattern-bottom.svg");
+      background-repeat: no-repeat;
+      top: 50%;
+      z-index: -1;
+    }
+
+    .card::before {
+      content: "sa";
+      position: absolute;
+      height: 350%;
+      width: 350%;
+      background: url("images/bg-pattern-top.svg");
+      top: -170%;
+      right: 10%;
+      background-repeat: no-repeat;
+      z-index: -1;
+
+    }
+
+    .card .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* border: black solid 2px; */
+      padding: 5em 0 1em 0;
+      border-radius: 15px;
+      position: relative;
+      height: 230px;
+    }
+
+    .profile::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 50%;
+      background: url("images/bg-pattern-card.svg");
+      /* z-index: 0; */
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .card__profile-name {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .card .profile p {
+      margin-top: 5px;
+    }
+
+
+
+    .information {
+      display: flex;
+      padding-bottom: 0.5em;
+      justify-content: space-evenly;
+      /* margin-top: 40px; */
+      border-top: hsl(224, 17%, 87%) solid 0.1px
+    }
+
+    .information h1 {
+      margin-top: 40px;
+      line-height: 0.1em;
+      font-size: 18px;
+    }
+
+
+
+    /* 980px / 16px = 61.25em */
+    @media (min-width: 980px) {
+
+      .card::before {
+        content: "";
+        position: absolute;
+        height: 310%;
+        width: 310%;
+        background: url("images/bg-pattern-top.svg");
+        top: -170%;
+        right: 10%;
+        background-repeat: no-repeat;
+        z-index: -1;
+
+      }
+
+
+      .card {
+        width: 350px;
+      }
+
+    }
   </style>
 </head>
 
 <body>
 
-
-  <!-- Victor Crest
-  26
-  London
-
-  80K
-  Followers
-
-  803K
-  Likes
-
-  1.4K
-  Photos -->
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Irfan fauzi</a>.
   </div>
+
+  <div class="card">
+    <div class="profile">
+      <img src="images/image-victor.jpg" alt="" srcset="" class="card__profile-img">
+      <h1 class="card__profile-name">Victor Crest <span>26</span></h1>
+      <p>London</p>
+    </div>
+    <div class="information">
+      <div class="cont">
+        <h1>80K</h1>
+        <p>Followers</p>
+      </div>
+      <div class="cont">
+        <h1>803K</h1>
+        <p>Likes</p>
+      </div>
+      <div class="cont">
+        <h1>1.4K</h1>
+        <p>Photos</p>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 
 </html>
