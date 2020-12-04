@@ -41,18 +41,51 @@ body{
 
 // main
 main{
-  max-width: 90%;
-  margin: 10% auto;
+  max-width: 1800px;
+  margin: 4% auto;
   // border: black solid 1px;
   display: grid;
   gap: 2em;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(minmax(450px, fr));
+  // height: 100vh;
+  padding: 0 2rem;
  
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+  main{
+    grid-template-columns: repeat(4,1fr);
+    padding: 0 3rem;
+    gap: 1rem;
+   
+  }
+  .box1{
+     grid-column: 1/3;
+  }
+  .box5{
+    grid-column: 4;
+    grid-row: 1/3;
+  }
+  .box3{
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .box4{
+    grid-column: -4/-2;
+    grid-row: 2;
+  }
+  .comment-box{
+    // font-size: 0.5em;
+   h1,p,h3{
+     padding: 1px;
+   }
+  }
 }
 
 // comment box
 .comment-box{
-  
   padding: 2em;
   position: relative;
   background-color: #ffffff;
@@ -68,11 +101,11 @@ main{
     }
   }
   &__bold--comment{
-    margin: 1em 0;
+    margin: 0.5em 0;
     font-size: 1.8em;
     position: relative;
     z-index: 2;
-    padding: 0.2em;
+    padding: 0.1em;
   }
   &__thin--comment{
     font-weight: 200;
@@ -84,32 +117,37 @@ main{
   color: $lightGrayBlue;
   position: relative;
   z-index: 3;
-  overflow: hidden;
+  
   &::after{
     content: "";
     position: absolute;
     top: 0;
-    left: 210px;
+    right: 10px;
     background-image: url("../images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
     width: 150px;
     height: 150px;
     background-size: cover;
+    opacity: 70%;
     z-index: 1;
 
   }
+ 
 }
 .box2{
   background-color: $grayishBlue;
   color: $lightGrayBlue;
 }
 .box3{
+  background-color: white;
   color: $grayishBlue;
 }
 .box4{
   background-color: $blackishBlue;
   color: $lightGrayBlue;
+ 
 }
 .box5{
   color: $grayishBlue;
+  
 }
