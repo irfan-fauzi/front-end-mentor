@@ -10,6 +10,13 @@ $lightGrayBlue : hsl(210, 46%, 95%);
 $fontsize : 13px;
 
 // base reset
+.attribution{
+  text-align: center;
+  a{
+    text-align: center;
+    font-size: 10px;
+  }
+}
 *{
   margin: 0;
   padding: 0;
