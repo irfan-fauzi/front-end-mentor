@@ -1,0 +1,115 @@
+// base color
+$primaryViolet : hsl(263, 55%, 52%);
+$grayishBlue : hsl(217, 19%, 35%);
+$blackishBlue : hsl(219, 29%, 14%);
+
+// netral color 
+$lightGray : hsl(0, 0%, 81%);
+$lightGrayBlue : hsl(210, 46%, 95%);
+
+$fontsize : 13px;
+
+// base reset
+*{
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html{
+  box-sizing: border-box;
+  font-family:'Barlow Semi Condensed', sans-serif;
+  
+}
+img{
+  display: inline-block;
+  border-radius: 50%;
+  border: solid #ffffff 2px;
+  width: 40px;
+  height: 40px;
+  
+}
+body{
+  background-color: $lightGrayBlue;
+}
+
+
+// -------------------------
+
+// main
+main{
+  max-width: 90%;
+  margin: 10% auto;
+  // border: black solid 1px;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr;
+ 
+}
+
+// comment box
+.comment-box{
+  
+  padding: 2em;
+  position: relative;
+  background-color: #ffffff;
+  // border: black solid 1px;
+  border-radius: 12px;
+  box-shadow: 5px 10px 246px -108px rgba(0, 0, 0, 0.75);
+  .profile{
+    padding: 0.2em;
+    display: flex;
+    justify-content: start;
+    &__text{
+      margin-left: 1em;
+    }
+  }
+  &__bold--comment{
+    margin: 1em 0;
+    font-size: 1.8em;
+    position: relative;
+    z-index: 2;
+    padding: 0.2em;
+  }
+  &__thin--comment{
+    font-weight: 200;
+    padding: 0.2em;
+  }
+}
+.box1{
+  background-color: $primaryViolet;
+  color: $lightGrayBlue;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 210px;
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    z-index: 1;
+
+  }
+}
+.box2{
+  background-color: $grayishBlue;
+  color: $lightGrayBlue;
+}
+.box3{
+  color: $grayishBlue;
+}
+.box4{
+  background-color: $blackishBlue;
+  color: $lightGrayBlue;
+}
+.box5{
+  color: $grayishBlue;
+}
