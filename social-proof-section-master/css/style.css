@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Spartan', sans-serif;
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+main {
+  margin: 5% auto;
+  width: 90%;
+}
+
+img {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.main-caption {
+  text-align: center;
+}
+
+.main-caption__bold {
+  padding: 1.2em;
+  line-height: 1;
+}
+
+.main-caption__thin {
+  padding: 0.6em;
+  line-height: 1.5;
+  margin-top: -1em;
+}
+
+.rating-box {
+  text-align: center;
+  margin-top: 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 10px;
+}
+
+.rating-box__box {
+  background-color: #eeee;
+  padding: 1em;
+  position: relative;
+}
+
+.rating-box__box p::before {
+  content: "";
+  top: 0;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: url("/social-proof-section-master/images/image-colton.jpg");
+}
+/*# sourceMappingURL=style.css.map */
