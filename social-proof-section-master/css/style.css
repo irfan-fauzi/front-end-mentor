@@ -25,6 +25,8 @@ main {
 
 @media only screen and (min-width: 1200px) {
   main {
+    width: 1400px;
+    margin: 30px auto;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -57,10 +59,15 @@ img {
 }
 
 @media only screen and (min-width: 1200px) {
+  .main-caption {
+    margin-top: 0;
+    width: 450px;
+  }
   .main-caption__bold, .main-caption__thin {
     text-align: left;
   }
   .main-caption__bold {
+    margin-top: -20px;
     margin-left: -45px;
     font-size: 45px;
     font-weight: 700;
@@ -71,17 +78,13 @@ img {
   color: #502050;
   text-align: center;
   margin-top: 2em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  gap: 10px;
 }
 
 .rating-box__box {
   background-color: #eeee;
   padding: 1em;
   height: 40px;
+  margin-top: 16px;
   position: relative;
 }
 
@@ -102,6 +105,56 @@ img {
   padding: 1em 0 0 0;
   margin-top: 0.5em;
   font-weight: 700;
+}
+
+@media only screen and (min-width: 1200px) {
+  .rating-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .rating-box__box {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .rating-box__box p {
+    padding: 1em;
+  }
+  .rating-box__box:nth-child(2) {
+    margin: 1.3em auto;
+  }
+  .rating-box__box:nth-child(3) {
+    margin-top: 2px;
+    margin-left: 85px;
+  }
+  .rating-box__box::before {
+    display: none;
+  }
+  .rating-box__box p {
+    margin-left: 90px;
+  }
+  .rating-box__box p::before {
+    content: "";
+    background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/59dadb33625d22900067867f467a061fb8db6892/social-proof-section-master/images/icon-star.svg");
+    width: 100px;
+    height: 16px;
+    position: absolute;
+    background-repeat: repeat-x;
+    background-repeat: space;
+    left: 60px;
+  }
 }
 
 .comment {

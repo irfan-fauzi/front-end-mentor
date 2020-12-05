@@ -33,6 +33,9 @@ main{
 }
 @media only screen and (min-width: 1200px){
   main{
+    width: 1400px;
+    // border: solid black 1px;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -61,10 +64,13 @@ img{
 }
 @media only screen and (min-width: 1200px){
   .main-caption{
+    margin-top:0;
+    width: 450px;
     &__bold, &__thin{
       text-align: left;
     }
     &__bold{
+      margin-top: -20px;
       margin-left: -45px;
       font-size: 45px;
       font-weight: 700;
@@ -78,14 +84,11 @@ img{
   text-align: center;
   margin-top: 2em;
   // background-color: #eeee;
-  display: grid;
-  grid-template-rows: 1fr;
-  gap: 10px;
-
   &__box{
     background-color: #eeee;
     padding: 1em;
     height: 40px;
+    margin-top: 16px;
     position: relative;
     // height: 50px;
     &::before{
@@ -107,6 +110,50 @@ img{
       padding: 1em 0 0 0;
       margin-top: 0.5em;
       font-weight: 700;
+    }
+  }
+}
+@media only screen and (min-width: 1200px){
+  .rating-box{
+    // border: black solid 1px;
+    display: flex;
+    flex-direction: column;
+   
+    &__box{
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      // border: black solid 1px;
+      align-items: center;
+      p{
+        padding: 1em;
+      }
+     
+    }
+    &__box:nth-child(2){
+      margin: 1.3em auto;
+    }
+    &__box:nth-child(3){
+      margin-top: 2px;
+      margin-left: 85px;
+    }
+    &__box::before{
+     display: none;
+    }
+    &__box{
+      p{
+        margin-left: 90px;
+      }
+      p::before{
+        content: "";
+        background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/59dadb33625d22900067867f467a061fb8db6892/social-proof-section-master/images/icon-star.svg");
+        width: 100px;
+        height: 16px;
+        position: absolute;
+        background-repeat: repeat-x;
+        background-repeat: space;        
+        left: 60px;
+      }
     }
   }
 }
