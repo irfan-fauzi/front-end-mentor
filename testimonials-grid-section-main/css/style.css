@@ -35,17 +35,31 @@ img {
 
 body {
   background-color: #ecf2f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
 main {
   max-width: 1800px;
-  margin: 4% auto;
   display: -ms-grid;
   display: grid;
   gap: 2em;
   -ms-grid-columns: ()[minmax];
       grid-template-columns: repeat(minmax(450px, fr));
-  padding: 0 2rem;
+  height: 600px;
+  padding: 2em;
 }
 
 @media only screen and (min-width: 1200px) {

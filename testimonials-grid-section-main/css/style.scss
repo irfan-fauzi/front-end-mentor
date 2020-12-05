@@ -41,21 +41,27 @@ img{
 }
 body{
   background-color: $lightGrayBlue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+  
+
 }
-
-
 // -------------------------
 
 // main
 main{
   max-width: 1800px;
-  margin: 4% auto;
+  // margin: 1em auto;
   // border: black solid 1px;
   display: grid;
   gap: 2em;
   grid-template-columns: repeat(minmax(450px, fr));
-  // height: 100vh;
-  padding: 0 2rem;
+  height: 600px;
+  padding: 2em;
  
 }
 
@@ -66,6 +72,7 @@ main{
     grid-template-columns: repeat(4,1fr);
     padding: 0 3rem;
     gap: 1rem;
+    // height: 400px;
    
   }
   .box1{
