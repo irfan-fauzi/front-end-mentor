@@ -15,16 +15,26 @@ $white : hsl(0, 0%, 100%);
 
 html{
   font-family: 'Spartan', sans-serif;
-  
   scroll-behavior: smooth;
   font-size: 15px;
 }
+
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
+body::before{
+  content: "";
+  background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/ce03a760bbba4b1b2382d0237ef75a004586b53a/social-proof-section-master/images/bg-pattern-top-mobile.svg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 0;
+}
+
 // main
 main{
   margin: 5% auto;
@@ -33,7 +43,7 @@ main{
 }
 @media only screen and (min-width: 1200px){
   main{
-    width: 1400px;
+    width: 1300px;
     // border: solid black 1px;
     margin: 30px auto;
     display: grid;
@@ -165,12 +175,15 @@ img{
 .comment{
   margin-top: 3.5em;
   display: grid;
-  grid-template-columns: repeat(auto-fill ,minmax(390px,1fr));
+  grid-template-columns: repeat(auto-fill ,minmax(335px,1fr));
   gap: 0.9em;
   color: $white;
+  max-width: 100%;
   &__box{
     background-color: $VeryDarkMagenta;
     border-radius: 12px;
+    max-width: 100%;
+
   }
   &__profile{
     padding: 2em;
@@ -196,6 +209,17 @@ img{
 }
 @media only screen and (min-width: 1200px){
   .comment{
+    // border: black solid 1px;
+    // padding: 1em;
     grid-column: -3/-1;
+    &__box:nth-child(1){
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+    &__box:nth-child(3){
+      margin-top: 15px;
+      margin-bottom: -15px;
+    }
   }
+  
 }
