@@ -25,10 +25,17 @@ html{
 *::after {
   box-sizing: inherit;
 }
-
+// main
 main{
   margin: 5% auto;
   width: 90%;
+  
+}
+@media only screen and (min-width: 1200px){
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 img{
   border-radius: 50%;
@@ -38,39 +45,110 @@ img{
 // main caption
 .main-caption{
   text-align: center;
+  color: $VeryDarkMagenta;
   &__bold{
     padding: 1.2em;
     line-height: 1;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 1em;
   }
   &__thin{
     padding: 0.6em;
-    line-height: 1.5;
+    line-height: 1.8;
     margin-top: -1em;
+  }
+}
+@media only screen and (min-width: 1200px){
+  .main-caption{
+    &__bold, &__thin{
+      text-align: left;
+    }
+    &__bold{
+      margin-left: -45px;
+      font-size: 45px;
+      font-weight: 700;
+    }
   }
 }
 
 // rating box
 .rating-box{
+  color: $VeryDarkMagenta;
   text-align: center;
   margin-top: 2em;
   // background-color: #eeee;
   display: grid;
   grid-template-rows: 1fr;
   gap: 10px;
+
   &__box{
     background-color: #eeee;
     padding: 1em;
+    height: 40px;
     position: relative;
-    p::before{
+    // height: 50px;
+    &::before{
       content: "";
-      top: 0;
+      top: 8px;
+      margin-left: -55px;
+      // margin: auto;
       width: 100px;
-      height: 100px;
+      height: 16px;
       position: absolute;
-      background: url("/social-proof-section-master/images/image-colton.jpg");
-
+      background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/59dadb33625d22900067867f467a061fb8db6892/social-proof-section-master/images/icon-star.svg");
+      // background-position: left center;
+      background-repeat: repeat-x;
+      background-repeat: space;
+      padding-top: 1em;
       
     }
+    p{
+      padding: 1em 0 0 0;
+      margin-top: 0.5em;
+      font-weight: 700;
+    }
   }
+}
 
+// end rating box
+
+// start comment section
+
+.comment{
+  margin-top: 3.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill ,minmax(390px,1fr));
+  gap: 0.9em;
+  color: $white;
+  &__box{
+    background-color: $VeryDarkMagenta;
+    border-radius: 12px;
+  }
+  &__profile{
+    padding: 2em;
+    display: flex;
+   
+    .profile-name{
+      margin-left: 1.5em;
+      .name{
+        font-weight: 700;
+      }
+      .status{
+        color: $SoftPink;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+  }
+  &__text{
+    padding: 2em ;
+    line-height: 1.7;
+    margin-top: -20px;
+  }
+}
+@media only screen and (min-width: 1200px){
+  .comment{
+    grid-column: -3/-1;
+  }
 }

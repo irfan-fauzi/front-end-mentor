@@ -23,6 +23,15 @@ main {
   width: 90%;
 }
 
+@media only screen and (min-width: 1200px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 img {
   border-radius: 50%;
   width: 40px;
@@ -30,20 +39,36 @@ img {
 
 .main-caption {
   text-align: center;
+  color: #502050;
 }
 
 .main-caption__bold {
   padding: 1.2em;
   line-height: 1;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 1em;
 }
 
 .main-caption__thin {
   padding: 0.6em;
-  line-height: 1.5;
+  line-height: 1.8;
   margin-top: -1em;
 }
 
+@media only screen and (min-width: 1200px) {
+  .main-caption__bold, .main-caption__thin {
+    text-align: left;
+  }
+  .main-caption__bold {
+    margin-left: -45px;
+    font-size: 45px;
+    font-weight: 700;
+  }
+}
+
 .rating-box {
+  color: #502050;
   text-align: center;
   margin-top: 2em;
   display: -ms-grid;
@@ -56,15 +81,74 @@ img {
 .rating-box__box {
   background-color: #eeee;
   padding: 1em;
+  height: 40px;
   position: relative;
 }
 
-.rating-box__box p::before {
+.rating-box__box::before {
   content: "";
-  top: 0;
+  top: 8px;
+  margin-left: -55px;
   width: 100px;
-  height: 100px;
+  height: 16px;
   position: absolute;
-  background: url("/social-proof-section-master/images/image-colton.jpg");
+  background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/59dadb33625d22900067867f467a061fb8db6892/social-proof-section-master/images/icon-star.svg");
+  background-repeat: repeat-x;
+  background-repeat: space;
+  padding-top: 1em;
+}
+
+.rating-box__box p {
+  padding: 1em 0 0 0;
+  margin-top: 0.5em;
+  font-weight: 700;
+}
+
+.comment {
+  margin-top: 3.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(390px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  gap: 0.9em;
+  color: white;
+}
+
+.comment__box {
+  background-color: #502050;
+  border-radius: 12px;
+}
+
+.comment__profile {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.comment__profile .profile-name {
+  margin-left: 1.5em;
+}
+
+.comment__profile .profile-name .name {
+  font-weight: 700;
+}
+
+.comment__profile .profile-name .status {
+  color: #ee68a4;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.comment__text {
+  padding: 2em;
+  line-height: 1.7;
+  margin-top: -20px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .comment {
+    grid-column: -3/-1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
