@@ -31,6 +31,7 @@ html{
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
 }
+// BODY
 body{
   display: flex;
   align-items: center;
@@ -43,11 +44,13 @@ body::before{
   left: -30px;
   width: 55%;
   height: 550px;
-  background-color: $LightViolet;
+  background-image: linear-gradient(to right top, #0718b7, #4e21c2, #742dcc, #943bd7, #b24ae1);
   border-bottom-right-radius: 90%;
   z-index: -1;
 
 }
+
+// BODY AND MAIN ( DESKTOP VERSION )
 @media only screen and (min-width: 992px) {
   body{
     display: flex;
@@ -57,7 +60,6 @@ body::before{
     overflow: hidden;
   }
   main{
-    
     display: flex;
     align-items: center;
     width: 890px;
@@ -70,10 +72,10 @@ body::before{
     content: "";
     width: 35%;
     height: 100%;
-    left: -90px;
+    left: -140px;
     z-index: -1;
-    border-bottom-right-radius: 45%;
-    border-bottom-left-radius: 45%;;
+    border-bottom-right-radius: 55%;
+    border-bottom-left-radius: 55%;;
   }
   body::after{
     content: "1";
@@ -90,12 +92,15 @@ body::before{
  
 }
 
+// END BODY AND MAIN
 
 // START PHONE ELEMENT
 
 .phone-container{
   margin-top: 60px;
   position: relative;
+  transition: all 0.5s ease-in-out;
+  
   cursor: pointer;
   .phone{
     width: 280px;
@@ -107,6 +112,7 @@ body::before{
     background-color: $White;
     border-radius: 29px;
     overflow: hidden;
+
     // header phone
     &__header{
       position: relative;
@@ -137,7 +143,6 @@ body::before{
           margin-top: 15px;
           font-size: 0.7rem;
           margin-left: 10px;
-          // position: absolute;
           h3{
             font-weight: 500;
           }
@@ -162,6 +167,7 @@ body::before{
         left: 59px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px ;
+        z-index: 4;
       }
     }
     // END HEADER PHONE
@@ -217,11 +223,7 @@ body::before{
 
         }
       }
-      // .message4{
-      //   p{
-      //     margin-left: -25px;
-      //   }
-      // }
+      
       .message5{
         p{
           padding: 10px;
@@ -286,6 +288,9 @@ body::before{
     
   }
 }
+.phone-container:hover{
+  transform: translate(0, 20px);
+}
 @media only screen and (min-width: 992px){
   .phone-container{
     margin-top: -70px;
@@ -294,6 +299,8 @@ body::before{
 
 // END PHONE ELEMENT
 
+// START INFO ELEMENT
+
 .info{
   text-align: center;
   margin-top: 70px;
@@ -301,14 +308,14 @@ body::before{
   
   .header{
     padding-bottom: 1.4rem;
-    color: rgb(89, 70, 99);
+    color: rgb(60, 55, 63);
     font-weight: 500;
   }
   p{
     margin-top: -35px;
     padding: 2rem;
     line-height: 1.7;
-    color: rgb(140, 92, 186);
+    color: rgb(163, 156, 167);
   }
 }
 @media only screen and (min-width: 992px){
@@ -322,3 +329,5 @@ body::before{
     }
   }
 }
+
+// END INFO ELEMENT
