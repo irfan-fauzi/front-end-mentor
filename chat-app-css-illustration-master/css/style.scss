@@ -1,0 +1,94 @@
+
+// Text color
+$PaleViolet-sub-heading-at-the-top-of-the-app-UI: hsl(276, 100%, 81%);
+$ModerateViolet-chat-on-the-left: hsl(276, 55%, 52%);
+$DesaturatedDarkViolet-chat-on-the-right: hsl(271, 15%, 43%);
+$GrayishBlue-placeholder-text: hsl(206, 6%, 79%);
+$VeryDarkDesaturatedViolet-main-heading: hsl(271, 36%, 24%);
+$DarkGrayishViolet-paragraph: hsl(270, 7%, 64%);
+
+// Gradient colo 
+$LightMagenta : hsl(293, 100%, 63%);
+$LightViolet:  hsl(264, 100%, 61%);
+
+// Secondary Color
+$White: hsl(0, 0%, 100%);
+$LightGrayishVioletAppBackground: hsl(270, 20%, 96%);
+$submit-button-background : hsl(271, 36%, 24%);
+$VeryLightMagenta-radio-button-outline: hsl(289, 100%, 72%); 
+
+// base reset 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+body{
+  background-color: blueviolet;
+}
+
+// START PHONE ELEMENT
+
+.phone-container{
+  .phone{
+    width: 280px;
+    height: 550px;
+    box-sizing: border-box;
+   
+    border: $White solid 0.9em;
+    margin: 2.5em auto;
+    background-color: $White;
+    border-radius: 29px;
+    overflow: hidden;
+    // header phone
+    &__header{
+      position: relative;
+      width: 100%;
+      background-color: $PaleViolet-sub-heading-at-the-top-of-the-app-UI;
+      .profile{
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        color: rgb(239, 226, 240);
+        img{
+          width: 23px;
+          height: 23px;
+          border-radius: 50%;
+          border: $White solid 1px;
+          margin-right: 10px;
+          margin-top: 15px;
+        }
+        .profile-box{
+          margin-top: 15px;
+          font-size: 0.7rem;
+          h3{
+            font-weight: 500;
+          }
+          p{
+            font-size: 0.6em;
+          }
+        }
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        width: 55%;
+        height: 25%;
+        background-color: white;
+        top: 0;
+        left: 56px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px ;
+      }
+    }
+    
+  }
+}
+
+// END PHONE ELEMENT
