@@ -7,9 +7,12 @@ $GrayishBlue-placeholder-text: hsl(206, 6%, 79%);
 $VeryDarkDesaturatedViolet-main-heading: hsl(271, 36%, 24%);
 $DarkGrayishViolet-paragraph: hsl(270, 7%, 64%);
 
-// Gradient colo 
+// Gradient color
 $LightMagenta : hsl(293, 100%, 63%);
 $LightViolet:  hsl(264, 100%, 61%);
+
+$gradient: linear-gradient(to right top, #1227eb, #6f1fe4, #9a19dd, #ba1bd5, #d426ce);
+$gradient2: linear-gradient(to right top, #d426ce, #ba1bd5, #9a19dd, #6f1fe4, #1227eb);
 
 // Secondary Color
 $White: hsl(0, 0%, 100%);
@@ -28,9 +31,11 @@ html{
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
 }
-// body{
-//   // background-color: blueviolet;
-// }
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body::before{
   content: "";
   position: absolute;
@@ -40,14 +45,58 @@ body::before{
   height: 550px;
   background-color: $LightViolet;
   border-bottom-right-radius: 90%;
+  z-index: -1;
 
 }
+@media only screen and (min-width: 992px) {
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  main{
+    
+    display: flex;
+    align-items: center;
+    width: 890px;
+    margin: auto;
+    height: 700px;
+    justify-content: center;
+    padding: 20px;
+  }
+  body::before{
+    content: "";
+    width: 35%;
+    height: 100%;
+    left: -90px;
+    z-index: -1;
+    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 45%;;
+  }
+  body::after{
+    content: "1";
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    background-color: $LightViolet;
+    opacity: 5%;
+    top: 30px;
+    left: 80%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+ 
+}
+
 
 // START PHONE ELEMENT
 
 .phone-container{
   margin-top: 60px;
   position: relative;
+  cursor: pointer;
   .phone{
     width: 280px;
     height: 550px;
@@ -62,7 +111,8 @@ body::before{
     &__header{
       position: relative;
       width: 100%;
-      background-color: $PaleViolet-sub-heading-at-the-top-of-the-app-UI;
+      
+      background-image: $gradient;
       .profile{
         display: flex;
         height: 70px;
@@ -183,8 +233,8 @@ body::before{
         width: 76%;
         
         p{
-          background:$ModerateViolet-chat-on-the-left;
-          padding-left: 35px;
+          background-image: linear-gradient(to right, #d426ce, #c217d5, #ac0cdc, #910ae3, #6e12eb);
+          padding-left: 40px;
           padding-top: 0.7rem;
           padding-bottom: 0.7rem;
           color: $VeryLightMagenta-radio-button-outline;
@@ -193,16 +243,21 @@ body::before{
         }
         span{
           font-size: 13px;
-          margin-left: 40px;
+          margin-left: 30px;
           color: $White;
+        }
+      }
+      .message8{
+        span{
+          margin-left: 50px;
         }
       }
       .fa-clock{
         position: absolute;
-        top: 20px;
+        top: 16px;
         left: 20px;
         color: $VeryLightMagenta-radio-button-outline;
-        width: 30px;
+        font-size: 17px;
        
       }
       .input-message{
@@ -224,10 +279,16 @@ body::before{
           position: absolute;
           top: 7px;
           left: 200px;
+          color: rgb(90, 78, 90);
         }
       }
     }
     
+  }
+}
+@media only screen and (min-width: 992px){
+  .phone-container{
+    margin-top: -70px;
   }
 }
 
@@ -247,6 +308,17 @@ body::before{
     margin-top: -35px;
     padding: 2rem;
     line-height: 1.7;
-    color: rgb(186, 157, 213);
+    color: rgb(140, 92, 186);
+  }
+}
+@media only screen and (min-width: 992px){
+  .info{
+    margin-top: -60px;
+    text-align: left;
+    margin-left: 90px;
+    padding: 0;
+    h1{
+      margin-left: 30px;
+    }
   }
 }

@@ -10,6 +10,18 @@ html {
   font-size: 16px;
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 body::before {
   content: "";
   position: absolute;
@@ -19,11 +31,65 @@ body::before {
   height: 550px;
   background-color: #8838ff;
   border-bottom-right-radius: 90%;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 890px;
+    margin: auto;
+    height: 700px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px;
+  }
+  body::before {
+    content: "";
+    width: 35%;
+    height: 100%;
+    left: -90px;
+    z-index: -1;
+    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 45%;
+  }
+  body::after {
+    content: "1";
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    background-color: #8838ff;
+    opacity: 5%;
+    top: 30px;
+    left: 80%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
 }
 
 .phone-container {
   margin-top: 60px;
   position: relative;
+  cursor: pointer;
 }
 
 .phone-container .phone {
@@ -43,7 +109,8 @@ body::before {
 .phone-container .phone__header {
   position: relative;
   width: 100%;
-  background-color: #d89eff;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1227eb), color-stop(#6f1fe4), color-stop(#9a19dd), color-stop(#ba1bd5), to(#d426ce));
+  background-image: linear-gradient(to right top, #1227eb, #6f1fe4, #9a19dd, #ba1bd5, #d426ce);
 }
 
 .phone-container .phone__header .profile {
@@ -167,8 +234,9 @@ body::before {
 }
 
 .phone-container .phone__message .message7 p, .phone-container .phone__message .message8 p {
-  background: #9241c8;
-  padding-left: 35px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#d426ce), color-stop(#c217d5), color-stop(#ac0cdc), color-stop(#910ae3), to(#6e12eb));
+  background-image: linear-gradient(to right, #d426ce, #c217d5, #ac0cdc, #910ae3, #6e12eb);
+  padding-left: 40px;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   color: #e570ff;
@@ -177,16 +245,20 @@ body::before {
 
 .phone-container .phone__message .message7 span, .phone-container .phone__message .message8 span {
   font-size: 13px;
-  margin-left: 40px;
+  margin-left: 30px;
   color: white;
+}
+
+.phone-container .phone__message .message8 span {
+  margin-left: 50px;
 }
 
 .phone-container .phone__message .fa-clock {
   position: absolute;
-  top: 20px;
+  top: 16px;
   left: 20px;
   color: #e570ff;
-  width: 30px;
+  font-size: 17px;
 }
 
 .phone-container .phone__message .input-message {
@@ -211,6 +283,13 @@ body::before {
   position: absolute;
   top: 7px;
   left: 200px;
+  color: #5a4e5a;
+}
+
+@media only screen and (min-width: 992px) {
+  .phone-container {
+    margin-top: -70px;
+  }
 }
 
 .info {
@@ -229,6 +308,18 @@ body::before {
   margin-top: -35px;
   padding: 2rem;
   line-height: 1.7;
-  color: #ba9dd5;
+  color: #8c5cba;
+}
+
+@media only screen and (min-width: 992px) {
+  .info {
+    margin-top: -60px;
+    text-align: left;
+    margin-left: 90px;
+    padding: 0;
+  }
+  .info h1 {
+    margin-left: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
