@@ -28,19 +28,32 @@ html{
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
 }
-body{
-  background-color: blueviolet;
+// body{
+//   // background-color: blueviolet;
+// }
+body::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 55%;
+  height: 550px;
+  background-color: $LightViolet;
+  border-bottom-right-radius: 90%;
+
 }
 
 // START PHONE ELEMENT
 
 .phone-container{
+  margin-top: 60px;
+  position: relative;
   .phone{
     width: 280px;
     height: 550px;
     box-sizing: border-box;
-   
-    border: $White solid 0.9em;
+    box-shadow: -1px 30px 50px 13px rgba(136, 131, 131, 0.23);
+    border: $White solid 0.7em;
     margin: 2.5em auto;
     background-color: $White;
     border-radius: 29px;
@@ -54,19 +67,27 @@ body{
         display: flex;
         height: 70px;
         align-items: center;
-        justify-content: center;
+        // justify-content: center;
         color: rgb(239, 226, 240);
+        .fa-chevron-left{
+          top: 35px;
+          left: 20px;
+          position: absolute;
+          // margin-left: 50px;
+        }
         img{
           width: 23px;
           height: 23px;
           border-radius: 50%;
           border: $White solid 1px;
-          margin-right: 10px;
+          margin-left: 40px;
           margin-top: 15px;
         }
         .profile-box{
           margin-top: 15px;
           font-size: 0.7rem;
+          margin-left: 10px;
+          // position: absolute;
           h3{
             font-weight: 500;
           }
@@ -74,6 +95,12 @@ body{
             font-size: 0.6em;
           }
         }
+        .fa-ellipsis-v{
+          position: absolute;
+          right: 10px;
+          top: 33px;
+        }
+        
       }
       &::before{
         content: "";
@@ -82,9 +109,122 @@ body{
         height: 25%;
         background-color: white;
         top: 0;
-        left: 56px;
+        left: 59px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px ;
+      }
+    }
+    // END HEADER PHONE
+
+    // START MESSAGE PHONE
+    &__message{
+      height: 100%;
+      width: 100%;
+      background-color: #f5f4f4;
+      font-size: 0.5rem;
+      // padding: 1.2rem;
+      font-weight: 200;
+      .message-box{
+        padding: 0.5em;
+        width: 60%;
+        margin-left: 5px;
+        position: relative;
+       
+        p{
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          padding: 1em;
+          background-color: white;
+          line-height: 1.5;
+        }
+        img{
+          width: 42px;
+          border-radius: 12px;
+        }
+      }
+      .message1, .message2, .message6{
+        p{
+          background-color: rgb(240, 219, 240);
+          color: $DesaturatedDarkViolet-chat-on-the-right;
+        }
+      }
+      .message3{
+       margin-top: 10px; 
+       position: relative;
+       left: 90px;
+       img{
+         margin-left: 5px;
+       }
+      }
+      .message4, .message5{
+        p{
+         background-color: white; 
+         position: relative;
+         left: 95px;
+         border-bottom-right-radius: 0;
+         border-bottom-left-radius: 10px;
+
+        }
+      }
+      // .message4{
+      //   p{
+      //     margin-left: -25px;
+      //   }
+      // }
+      .message5{
+        p{
+          padding: 10px;
+          margin-left: 60px;
+        }
+      }
+      .message7, .message8{
+        position: relative;
+        width: 76%;
+        
+        p{
+          background:$ModerateViolet-chat-on-the-left;
+          padding-left: 35px;
+          padding-top: 0.7rem;
+          padding-bottom: 0.7rem;
+          color: $VeryLightMagenta-radio-button-outline;
+          font-size: 10px;
+          // margin-left: 50px;
+        }
+        span{
+          font-size: 13px;
+          margin-left: 40px;
+          color: $White;
+        }
+      }
+      .fa-clock{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: $VeryLightMagenta-radio-button-outline;
+        width: 30px;
+       
+      }
+      .input-message{
+        margin: auto;
+        margin-top: 4px;
+        background-color: white;
+        height: 40px;
+        border-radius: 22px;
+        width: 90%;
+        position: relative;
+        p{
+         position: absolute;
+         top: 15px;
+         left: 20px;
+         color: rgb(206, 206, 206);
+        }
+        .fa-chevron-circle-right{
+          font-size: 24px;
+          position: absolute;
+          top: 7px;
+          left: 200px;
+        }
       }
     }
     
@@ -92,3 +232,21 @@ body{
 }
 
 // END PHONE ELEMENT
+
+.info{
+  text-align: center;
+  margin-top: 70px;
+  height: 250px;
+  
+  .header{
+    padding-bottom: 1.4rem;
+    color: rgb(89, 70, 99);
+    font-weight: 500;
+  }
+  p{
+    margin-top: -35px;
+    padding: 2rem;
+    line-height: 1.7;
+    color: rgb(186, 157, 213);
+  }
+}

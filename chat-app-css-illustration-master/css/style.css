@@ -10,8 +10,20 @@ html {
   font-size: 16px;
 }
 
-body {
-  background-color: blueviolet;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 55%;
+  height: 550px;
+  background-color: #8838ff;
+  border-bottom-right-radius: 90%;
+}
+
+.phone-container {
+  margin-top: 60px;
+  position: relative;
 }
 
 .phone-container .phone {
@@ -19,7 +31,9 @@ body {
   height: 550px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: white solid 0.9em;
+  -webkit-box-shadow: -1px 30px 50px 13px rgba(136, 131, 131, 0.23);
+          box-shadow: -1px 30px 50px 13px rgba(136, 131, 131, 0.23);
+  border: white solid 0.7em;
   margin: 2.5em auto;
   background-color: white;
   border-radius: 29px;
@@ -40,10 +54,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   color: #efe2f0;
+}
+
+.phone-container .phone__header .profile .fa-chevron-left {
+  top: 35px;
+  left: 20px;
+  position: absolute;
 }
 
 .phone-container .phone__header .profile img {
@@ -51,13 +68,14 @@ body {
   height: 23px;
   border-radius: 50%;
   border: white solid 1px;
-  margin-right: 10px;
+  margin-left: 40px;
   margin-top: 15px;
 }
 
 .phone-container .phone__header .profile .profile-box {
   margin-top: 15px;
   font-size: 0.7rem;
+  margin-left: 10px;
 }
 
 .phone-container .phone__header .profile .profile-box h3 {
@@ -68,6 +86,12 @@ body {
   font-size: 0.6em;
 }
 
+.phone-container .phone__header .profile .fa-ellipsis-v {
+  position: absolute;
+  right: 10px;
+  top: 33px;
+}
+
 .phone-container .phone__header::before {
   content: "";
   position: absolute;
@@ -75,8 +99,136 @@ body {
   height: 25%;
   background-color: white;
   top: 0;
-  left: 56px;
+  left: 59px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.phone-container .phone__message {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f4f4;
+  font-size: 0.5rem;
+  font-weight: 200;
+}
+
+.phone-container .phone__message .message-box {
+  padding: 0.5em;
+  width: 60%;
+  margin-left: 5px;
+  position: relative;
+}
+
+.phone-container .phone__message .message-box p {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1em;
+  background-color: white;
+  line-height: 1.5;
+}
+
+.phone-container .phone__message .message-box img {
+  width: 42px;
+  border-radius: 12px;
+}
+
+.phone-container .phone__message .message1 p, .phone-container .phone__message .message2 p, .phone-container .phone__message .message6 p {
+  background-color: #f0dbf0;
+  color: #6e5d7e;
+}
+
+.phone-container .phone__message .message3 {
+  margin-top: 10px;
+  position: relative;
+  left: 90px;
+}
+
+.phone-container .phone__message .message3 img {
+  margin-left: 5px;
+}
+
+.phone-container .phone__message .message4 p, .phone-container .phone__message .message5 p {
+  background-color: white;
+  position: relative;
+  left: 95px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 10px;
+}
+
+.phone-container .phone__message .message5 p {
+  padding: 10px;
+  margin-left: 60px;
+}
+
+.phone-container .phone__message .message7, .phone-container .phone__message .message8 {
+  position: relative;
+  width: 76%;
+}
+
+.phone-container .phone__message .message7 p, .phone-container .phone__message .message8 p {
+  background: #9241c8;
+  padding-left: 35px;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  color: #e570ff;
+  font-size: 10px;
+}
+
+.phone-container .phone__message .message7 span, .phone-container .phone__message .message8 span {
+  font-size: 13px;
+  margin-left: 40px;
+  color: white;
+}
+
+.phone-container .phone__message .fa-clock {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #e570ff;
+  width: 30px;
+}
+
+.phone-container .phone__message .input-message {
+  margin: auto;
+  margin-top: 4px;
+  background-color: white;
+  height: 40px;
+  border-radius: 22px;
+  width: 90%;
+  position: relative;
+}
+
+.phone-container .phone__message .input-message p {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #cecece;
+}
+
+.phone-container .phone__message .input-message .fa-chevron-circle-right {
+  font-size: 24px;
+  position: absolute;
+  top: 7px;
+  left: 200px;
+}
+
+.info {
+  text-align: center;
+  margin-top: 70px;
+  height: 250px;
+}
+
+.info .header {
+  padding-bottom: 1.4rem;
+  color: #594663;
+  font-weight: 500;
+}
+
+.info p {
+  margin-top: -35px;
+  padding: 2rem;
+  line-height: 1.7;
+  color: #ba9dd5;
 }
 /*# sourceMappingURL=style.css.map */
