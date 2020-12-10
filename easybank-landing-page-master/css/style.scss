@@ -1,0 +1,67 @@
+// PUBLIC COLOR
+// #Primary
+$DarkBlue: hsl(233, 26%, 24%);
+$LimeGreen: hsl(136, 65%, 51%);
+$BrightCyan: hsl(192, 70%, 51%);
+
+// #Neutral
+$GrayishBlue: hsl(233, 8%, 62%);
+$LightGrayishBlue: hsl(220, 16%, 96%);
+$VeryLightGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+// MIXIN BOX CENTER
+@mixin flexBox($direction, $justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+
+// base reset
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: 'Public Sans', sans-serif;
+  font-size: 18px;
+}
+
+// START HEADER -------------------
+header{
+  .navbar{
+    // border: black solid 1px;
+    @include flexBox(row, space-between);
+    padding: 1rem;
+    background-color: rgb(243, 221, 191);
+    .menus{
+      display: none;
+    }
+  }
+}
+// END HEADER ---------------------
+
+// START LANDING PAGE -------------
+.landing-page{
+  &__jumbotron{
+     position: relative;
+    .image{
+     max-width: 100%;
+    }
+    &::after{
+      content: "xa";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      background: url('./images/bg-intro-mobile.svg');
+    }
+  }
+}
+// END LANDING PAGE ---------------
+
+

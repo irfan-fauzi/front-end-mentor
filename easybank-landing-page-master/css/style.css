@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 18px;
+}
+
+header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1rem;
+  background-color: #f3ddbf;
+}
+
+header .navbar .menus {
+  display: none;
+}
+
+.landing-page__jumbotron {
+  position: relative;
+}
+
+.landing-page__jumbotron .image {
+  max-width: 100%;
+}
+
+.landing-page__jumbotron::after {
+  content: "xa";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background: url("./images/bg-intro-mobile.svg");
+}
+/*# sourceMappingURL=style.css.map */
