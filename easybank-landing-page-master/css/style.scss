@@ -29,16 +29,24 @@ $gradient: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da
   font-weight: 300;
   padding: $pad;
  
-
 }
 @mixin text-content-h($padding, $font-size) {
   font-weight: 300;
   font-size: $font-size;
   padding: $padding;
   color: $DarkBlue;
-  
-}
 
+}
+// MIXIN BUTTON
+@mixin buton {
+  margin-top: 30px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+  color: $White;
+  font-weight: 700;
+}
 
 // base reset
 *{
@@ -123,7 +131,7 @@ header{
 
 // START REASON SECTION
 .reason-section{
-  background-color: #eaeaea;
+  background-color: $VeryLightGray;
   margin-top: 4rem;
   padding: 3rem 0;
   display: grid;
@@ -142,7 +150,8 @@ header{
     margin-top: 3rem;
     text-align: center;
     h3{
-      @include text-content-h(0, 1rem)
+      @include text-content-h(1rem 0 0 0, 1rem)
+      
     }
     p{
        @include text-content-p(0 1.5rem);
@@ -150,6 +159,75 @@ header{
     }
   }
 }
-// END REASEON SECTION
+// END REASEON SECTION -------------------
 
+// START ARTICLES SECTION
+.articles{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  width: 90%;
+  margin: auto;
+  padding: 4rem 0;
+  // border: black solid 1px;
+  .caption{
+    text-align: center;
+    h1{
+      @include text-content-h(1rem, 1.7rem)
+    }
+  }
+  .box-articles{
+    // background-color: hotpink;
+    // padding: 0 1.3rem;
+    margin-top: 1rem;
+    img{
+      max-width: 100%;
+    }
+    article{
+      padding: 1.5rem;
+      span{
+        color: gray;
+        font-size: 0.5rem;
+      }
+      .title-article{
+        color:  $DarkBlue;
+        font-weight: 300;
+        margin-top: 0.5rem;
+      }
+      p{
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: gray;
+        margin-top: 0.7rem;
+      }
+    }
+  }
+}
+// END ARTICLES SECTION
 
+// START FOOTER
+  footer{
+    padding: 2rem 0;
+    text-align: center;
+    background-color: $DarkBlue;
+    .logo{
+     fill: white;
+    }
+    .sm{
+      margin-left: 0.4rem;
+      padding: 1.5rem 0;
+    }
+    .about{
+      color: $VeryLightGray;
+      font-size: 0.9rem;
+      line-height: 2;
+      font-weight: 200;
+    }
+    .btn{
+      @include buton();
+    }
+    .rights{
+      @include text-content-p(1rem)
+    }
+  }
+// END FOOTER

@@ -103,7 +103,7 @@ header .navbar .menus {
 }
 
 .reason-section {
-  background-color: #eaeaea;
+  background-color: #fafafa;
   margin-top: 4rem;
   padding: 3rem 0;
   display: -ms-grid;
@@ -141,7 +141,7 @@ header .navbar .menus {
 .reason-section__reason-box h3 {
   font-weight: 300;
   font-size: 1rem;
-  padding: 0;
+  padding: 1rem 0 0 0;
   color: #2d314d;
 }
 
@@ -153,5 +153,100 @@ header .navbar .menus {
   color: #a79f9f;
   font-weight: 300;
   padding: 0 1.5rem;
+}
+
+.articles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  width: 90%;
+  margin: auto;
+  padding: 4rem 0;
+}
+
+.articles .caption {
+  text-align: center;
+}
+
+.articles .caption h1 {
+  font-weight: 300;
+  font-size: 1.7rem;
+  padding: 1rem;
+  color: #2d314d;
+}
+
+.articles .box-articles {
+  margin-top: 1rem;
+}
+
+.articles .box-articles img {
+  max-width: 100%;
+}
+
+.articles .box-articles article {
+  padding: 1.5rem;
+}
+
+.articles .box-articles article span {
+  color: gray;
+  font-size: 0.5rem;
+}
+
+.articles .box-articles article .title-article {
+  color: #2d314d;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.articles .box-articles article p {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 0.7rem;
+}
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #2d314d;
+}
+
+footer .logo {
+  fill: white;
+}
+
+footer .sm {
+  margin-left: 0.4rem;
+  padding: 1.5rem 0;
+}
+
+footer .about {
+  color: #fafafa;
+  font-size: 0.9rem;
+  line-height: 2;
+  font-weight: 200;
+}
+
+footer .btn {
+  margin-top: 30px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), color-stop(#00d192), color-stop(#00cbbb), color-stop(#00c2d4), to(#2bb7da));
+  background-image: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+  color: white;
+  font-weight: 700;
+}
+
+footer .rights {
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a79f9f;
+  font-weight: 300;
+  padding: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
