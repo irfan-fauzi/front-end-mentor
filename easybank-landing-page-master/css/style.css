@@ -10,6 +10,12 @@ html {
   font-size: 18px;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 6;
+}
+
 header .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,27 +31,127 @@ header .navbar {
       -ms-flex-direction: row;
           flex-direction: row;
   padding: 1rem;
-  background-color: #f3ddbf;
+  background-color: white;
 }
 
 header .navbar .menus {
   display: none;
 }
 
-.landing-page__jumbotron {
+.landing-page {
   position: relative;
+  margin: auto;
+}
+
+.landing-page__jumbotron {
+  width: 90%;
+  margin: auto;
 }
 
 .landing-page__jumbotron .image {
   max-width: 100%;
+  position: relative;
+  top: -80px;
 }
 
-.landing-page__jumbotron::after {
-  content: "xa";
+.landing-page::after {
+  content: "";
   position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100px;
-  background: url("./images/bg-intro-mobile.svg");
+  top: -30px;
+  width: 100%;
+  height: 100%;
+  background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/33a3606413187f1de87b9272d41e9b4217ab369d/easybank-landing-page-master/images/bg-intro-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.landing-page__intro {
+  width: 90%;
+  margin: auto;
+  margin-top: -40px;
+  text-align: center;
+  color: #2d314d;
+}
+
+.landing-page__intro h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 0 1rem;
+  color: #2d314d;
+}
+
+.landing-page__intro p {
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a79f9f;
+  font-weight: 300;
+  padding: 0 1rem;
+}
+
+.landing-page__intro .btn {
+  margin-top: 30px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), color-stop(#00d192), color-stop(#00cbbb), color-stop(#00c2d4), to(#2bb7da));
+  background-image: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+  color: white;
+  font-weight: 700;
+}
+
+.reason-section {
+  background-color: #eaeaea;
+  margin-top: 4rem;
+  padding: 3rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.reason-section__intro {
+  text-align: center;
+}
+
+.reason-section__intro h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 0 2rem;
+  color: #2d314d;
+}
+
+.reason-section__intro p {
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a79f9f;
+  font-weight: 300;
+  padding: 0 1.5rem;
+}
+
+.reason-section__reason-box {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.reason-section__reason-box h3 {
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0;
+  color: #2d314d;
+}
+
+.reason-section__reason-box p {
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a79f9f;
+  font-weight: 300;
+  padding: 0 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */

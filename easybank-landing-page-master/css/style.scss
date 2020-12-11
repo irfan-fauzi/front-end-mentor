@@ -10,12 +10,33 @@ $LightGrayishBlue: hsl(220, 16%, 96%);
 $VeryLightGray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
 
+$gradient: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+
 // MIXIN BOX CENTER
 @mixin flexBox($direction, $justify-content) {
   display: flex;
   justify-content: $justify-content;
   align-items: center;
   flex-direction: $direction;
+}
+
+@mixin text-content-p($pad) {
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(167, 159, 159);
+  font-weight: 300;
+  padding: $pad;
+ 
+
+}
+@mixin text-content-h($padding, $font-size) {
+  font-weight: 300;
+  font-size: $font-size;
+  padding: $padding;
+  color: $DarkBlue;
+  
 }
 
 
@@ -33,11 +54,14 @@ html{
 
 // START HEADER -------------------
 header{
+  position: fixed;
+  width: 100%;
+  z-index: 6;
   .navbar{
     // border: black solid 1px;
     @include flexBox(row, space-between);
     padding: 1rem;
-    background-color: rgb(243, 221, 191);
+    background-color: $White;
     .menus{
       display: none;
     }
@@ -47,21 +71,85 @@ header{
 
 // START LANDING PAGE -------------
 .landing-page{
+  position: relative;
+  margin: auto;
   &__jumbotron{
-     position: relative;
-    .image{
+    // border: black solid 1px;
+    width: 90%;
+    margin: auto;
+    // margin-top: -;
+   .image{
      max-width: 100%;
+     position: relative;
+     top: -80px;
+   } 
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: -30px;
+    width: 100%;
+    height: 100%;
+    background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/33a3606413187f1de87b9272d41e9b4217ab369d/easybank-landing-page-master/images/bg-intro-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  &__intro{
+    width: 90%;
+    margin: auto;
+    margin-top: -40px;
+    text-align: center;
+    color: $DarkBlue;
+    h1{
+      @include text-content-h(0 1rem, 2rem);
     }
-    &::after{
-      content: "xa";
-      position: absolute;
-      top: 0;
-      width: 100px;
-      height: 100px;
-      background: url('./images/bg-intro-mobile.svg');
+    p{
+      @include text-content-p(0 1rem);
+    }
+    .btn{
+      margin-top: 30px;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 20px;
+      background-image: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+      color: $White;
+      font-weight: 700;
     }
   }
 }
+
 // END LANDING PAGE ---------------
+
+// START REASON SECTION
+.reason-section{
+  background-color: #eaeaea;
+  margin-top: 4rem;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  &__intro{
+    text-align: center;
+    h1{
+      @include text-content-h(0 2rem, 2rem);
+    }
+    p{
+      @include text-content-p(0 1.5rem);
+      // padding: 0 1rem;
+    }
+  }
+  &__reason-box{
+    margin-top: 3rem;
+    text-align: center;
+    h3{
+      @include text-content-h(0, 1rem)
+    }
+    p{
+       @include text-content-p(0 1.5rem);
+      //  padding: 0 1rem;
+    }
+  }
+}
+// END REASEON SECTION
 
 
