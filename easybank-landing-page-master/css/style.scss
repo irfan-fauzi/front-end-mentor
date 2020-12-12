@@ -12,7 +12,10 @@ $White: hsl(0, 0%, 100%);
 
 $gradient: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
 
-// MIXIN BOX CENTER
+$width-screen: 1335px; 
+
+// MIXIN -------------------------------------------
+
 @mixin flexBox($direction, $justify-content) {
   display: flex;
   justify-content: $justify-content;
@@ -47,6 +50,8 @@ $gradient: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da
   color: $White;
   font-weight: 700;
 }
+
+// END MIXIN -------------------------------------
 
 // base reset
 *{
@@ -126,16 +131,72 @@ header{
     }
   }
 }
+// @media only screen and (min-width: 600px) {
+//   .landing-page{
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//   }
+// } 
+@media only screen and (min-width: 992px) {
+  .landing-page{
+    display: flex;
+    overflow: hidden;
+    width: $width-screen;
+   
+    &__jumbotron{
+     // border: black solid 1px;
+      order: 2;
+      margin-top: -4rem;
+      padding: 0;
+      width: 1600px;
+      .image{
+        left: 7rem;
+        top: 0;
+        max-width: 100%;
+        z-index: 4;
+        
+      }
+    }
+    &__intro{
 
+      order: 1;
+      margin-top: 169px;
+      margin-left: 3rem;
+      text-align: left;
+      padding: 0rem 5rem 0rem 0rem;
+      h1{
+        text-align: left;
+        font-size: 2.8rem;
+      }
+      p{
+        text-align: left;
+        
+      }
+      .btn{
+        text-align: left;
+        margin-left: 1rem;
+      }
+     
+    }
+    &::after{
+      content: "adasd";
+      background: url("https://raw.githubusercontent.com/irfan-fauzi/front-end-mentor/8f74a1e3b987e2991db3c0e1e27ee2691711296b/easybank-landing-page-master/images/bg-intro-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: 580px;
+      top: -6rem;
+    }
+  }
+} 
 // END LANDING PAGE ---------------
 
 // START REASON SECTION
 .reason-section{
-  background-color: $VeryLightGray;
+  background-color: $LightGrayishBlue;
   margin-top: 4rem;
   padding: 3rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   &__intro{
     text-align: center;
     h1{
@@ -146,16 +207,52 @@ header{
       // padding: 0 1rem;
     }
   }
-  &__reason-box{
-    margin-top: 3rem;
-    text-align: center;
-    h3{
-      @include text-content-h(1rem 0 0 0, 1rem)
-      
+  .container{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    &__reason-box{
+      margin-top: 3rem;
+      text-align: center;
+      h3{
+        @include text-content-h(1rem 0 0 0, 1rem)
+        
+      }
+      p{
+        @include text-content-p(0 1.5rem);
+        //  padding: 0 1rem;
+      }
     }
-    p{
-       @include text-content-p(0 1.5rem);
-      //  padding: 0 1rem;
+  }
+}
+@media only screen and (min-width: 992px){
+  .reason-section{
+    padding: 0 2rem;
+    width: $width-screen;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-top: -10rem;
+    &__intro{
+     // grid-column: 1/5;
+      width: 600px;
+      h1, p{
+        text-align: left;
+        
+      }
+    }
+    .container{
+      &__reason-box{
+      text-align: left;
+      .img{
+        margin-left: 2rem;
+      }
+        h3, p{
+        text-align: left;
+      }
+      h3{
+        padding-left: 1.5rem;
+      }
+      }
     }
   }
 }
@@ -163,9 +260,6 @@ header{
 
 // START ARTICLES SECTION
 .articles{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.5rem;
   width: 90%;
   margin: auto;
   padding: 4rem 0;
@@ -176,33 +270,59 @@ header{
       @include text-content-h(1rem, 1.7rem)
     }
   }
-  .box-articles{
-    // background-color: hotpink;
-    // padding: 0 1.3rem;
-    margin-top: 1rem;
-    img{
-      max-width: 100%;
-    }
-    article{
-      padding: 1.5rem;
-      span{
-        color: gray;
-        font-size: 0.5rem;
+  .container{
+    //border: black solid 1px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.5rem;
+    &__box-articles{
+      
+      margin-top: 1rem;
+      img{
+        max-width: 100%;
+        object-fit: cover;
+        height: calc(80% - 4.8rem);
       }
-      .title-article{
-        color:  $DarkBlue;
-        font-weight: 300;
-        margin-top: 0.5rem;
-      }
-      p{
-        font-weight: 300;
-        font-size: 0.9rem;
-        color: gray;
-        margin-top: 0.7rem;
+      article{
+        padding: 1.5rem;
+        span{
+          color: gray;
+          font-size: 0.5rem;
+        }
+        .title-article{
+          color:  $DarkBlue;
+          font-weight: 300;
+          margin-top: 0.5rem;
+        }
+        p{
+          font-weight: 300;
+          font-size: 0.9rem;
+          color: gray;
+          margin-top: 0.7rem;
+        }
       }
     }
   }
 }
+@media only screen and (min-width: 992px){
+ 
+  .articles{
+    width: $width-screen;
+    padding: 0 3rem;
+    margin-top: 3rem;
+    .container{
+      &__box-articles{
+        margin-top: 3rem;
+      }
+    }
+   
+   // height: 100vh;
+    .caption{
+      text-align: left;
+    }
+  }
+}
+
 // END ARTICLES SECTION
 
 // START FOOTER
@@ -228,6 +348,36 @@ header{
     }
     .rights{
       @include text-content-p(1rem)
+    }
+  }
+  @media only screen and (min-width: 992px){
+    footer{
+      margin-top: 5rem;
+      display: grid;
+      // height: 200px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .about{
+      line-height: 1.5;
+      text-align: left;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+     //border: solid white 1px;
+     padding: 2rem 0;
+    }
+    .container1{
+      
+      margin: auto;
+      margin-left: 3rem;
+    }
+    .container3{
+     
+      margin: auto;
+      text-align: right;
+      //margin-right: 5rem;
+      .btn{
+        margin-right: 1rem;
+      }
     }
   }
 // END FOOTER
