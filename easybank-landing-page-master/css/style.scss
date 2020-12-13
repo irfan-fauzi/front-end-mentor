@@ -103,6 +103,9 @@ header{
         cursor: pointer;
         line-height: 2;
         color: gray;
+        &:hover{
+          background-color: rgb(228, 219, 219);
+        }
       }
     }
   }

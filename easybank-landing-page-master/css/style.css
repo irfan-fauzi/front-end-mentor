@@ -77,6 +77,10 @@ header .navbar .show li {
   color: gray;
 }
 
+header .navbar .show li:hover {
+  background-color: #e4dbdb;
+}
+
 @media screen and (min-width: 600px) {
   header .navbar {
     display: -webkit-box;
