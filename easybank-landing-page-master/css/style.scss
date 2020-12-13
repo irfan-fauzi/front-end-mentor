@@ -78,8 +78,86 @@ header{
     .menus{
       display: none;
     }
+    .btn{
+      display: none;
+    }
+    .fa-bars{
+      cursor: pointer;
+    }
+    .show{
+      box-shadow: 32px 200px 381px 112px rgba(0,0,0,0.5);;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: $White;
+      top: 4rem;
+      // left: 15%;
+      padding: 2rem 0;
+      width: 90%;
+      li{
+        //background-color: yellow;
+        list-style: none;
+        padding: 0 8rem ;
+        cursor: pointer;
+        line-height: 2;
+        color: gray;
+      }
+    }
+  }
+ 
+ 
+}
+@media screen and (min-width: 600px){
+  header{
+    .navbar{
+      display: flex;
+      //border: solid black 1px;
+      .logo{
+        margin-left: 3rem;
+      }
+      .fa-bars{
+        display: none;
+      }
+      .btn{
+        @include buton();
+        margin-top: 0;
+        display: inline-block;
+       // margin-right: 2rem;
+      }
+      .menus{
+        margin: auto;
+        margin-right: 20rem;
+        display: flex;
+        //border: solid black 1px;
+        &__sub-menu{
+          //border: solid black 1px;
+          position: relative;
+          color: $GrayishBlue;
+          margin-left: 2rem;
+          list-style: none;
+          font-size: 0.8rem;
+         // padding: 1rem 0;
+          cursor: pointer;
+          //line-height: 3;
+        }
+        &__sub-menu:hover::after{
+          content: '';
+         // display: block;
+         position: absolute;
+         height: 1.5px;
+         width: 3rem;
+         background-color: green;
+         top: 2rem;
+         left: 0;
+        
+        }
+      }
+    }
   }
 }
+
 // END HEADER ---------------------
 
 // START LANDING PAGE -------------

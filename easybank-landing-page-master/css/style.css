@@ -38,6 +38,95 @@ header .navbar .menus {
   display: none;
 }
 
+header .navbar .btn {
+  display: none;
+}
+
+header .navbar .fa-bars {
+  cursor: pointer;
+}
+
+header .navbar .show {
+  -webkit-box-shadow: 32px 200px 381px 112px rgba(0, 0, 0, 0.5);
+          box-shadow: 32px 200px 381px 112px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: white;
+  top: 4rem;
+  padding: 2rem 0;
+  width: 90%;
+}
+
+header .navbar .show li {
+  list-style: none;
+  padding: 0 8rem;
+  cursor: pointer;
+  line-height: 2;
+  color: gray;
+}
+
+@media screen and (min-width: 600px) {
+  header .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .navbar .logo {
+    margin-left: 3rem;
+  }
+  header .navbar .fa-bars {
+    display: none;
+  }
+  header .navbar .btn {
+    margin-top: 30px;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), color-stop(#00d192), color-stop(#00cbbb), color-stop(#00c2d4), to(#2bb7da));
+    background-image: linear-gradient(to right, #31d35c, #00d192, #00cbbb, #00c2d4, #2bb7da);
+    color: white;
+    font-weight: 700;
+    margin-top: 0;
+    display: inline-block;
+  }
+  header .navbar .menus {
+    margin: auto;
+    margin-right: 20rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .navbar .menus__sub-menu {
+    position: relative;
+    color: #9698a6;
+    margin-left: 2rem;
+    list-style: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  header .navbar .menus__sub-menu:hover::after {
+    content: '';
+    position: absolute;
+    height: 1.5px;
+    width: 3rem;
+    background-color: green;
+    top: 2rem;
+    left: 0;
+  }
+}
+
 .landing-page {
   position: relative;
   margin: auto;
